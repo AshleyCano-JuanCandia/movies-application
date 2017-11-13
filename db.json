@@ -9,6 +9,46 @@
       "title": "Star Wars: A New Hope",
       "rating": "5",
       "id": 2
+    },
+    {
+      "title": "Fight Club",
+      "rating": "5",
+      "id": 3
+    },
+    {
+      "title": "Moana",
+      "rating": "5",
+      "id": 4
+    },
+    {
+      "title": "Yes Man",
+      "rating": "4",
+      "id": 5
+    },
+    {
+      "title": "The Big Sick",
+      "rating": "4",
+      "id": 6
+    },
+    {
+      "title": "Requiem For A Dream",
+      "rating": "5",
+      "id": 7
+    },
+    {
+      "title": "The Science of Sleep",
+      "rating": "5",
+      "id": 8
+    },
+    {
+      "title": "Spirited Away",
+      "rating": "5",
+      "id": 10
+    },
+    {
+      "title": "test add ",
+      "rating": "1",
+      "id": 11
     }
   ]
 }
