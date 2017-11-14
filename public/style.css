@@ -1,15 +1,13 @@
 html, body {
     height: 100%;
 }
-
 .container {
     position: relative;
-    /*top: 50%;*/
-    /*transform: translateY(-100%);*/
     text-align: center;
+    background-color: #eaeaea;
 }
 .displayBox {
-    height: 444px;
+    height: 433px;
     width: 300px;
     background-color: indianred;
     margin: 10px;
@@ -17,7 +15,7 @@ html, body {
     color: white;
     font-family: 'Anton', sans-serif;
     font-size: 30px;
-    padding-top: 10px;
+    padding-top: 75px;
     text-shadow: 1px 1px black;
 }
 .displayBox:nth-child(4), .displayBox:nth-child(7){
@@ -27,5 +25,3 @@ html, body {
     font-family: 'Abel', sans-serif;
     font-size: 17px;
 }
-
-.selected { border: 1px solid black; }

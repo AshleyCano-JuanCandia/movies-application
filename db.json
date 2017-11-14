@@ -1,16 +1,6 @@
 {
   "movies": [
     {
-      "title": "Casablanca",
-      "rating": "4",
-      "id": 1
-    },
-    {
-      "title": "Star Wars",
-      "rating": "5",
-      "id": 2
-    },
-    {
       "title": "Fight Club",
       "rating": "5",
       "id": 3
@@ -21,28 +11,23 @@
       "id": 4
     },
     {
-      "title": "The Matrix",
-      "rating": "5",
-      "id": 5
-    },
-    {
-      "title": "Black Sheep",
+      "title": "IT",
       "rating": "5",
       "id": 6
     },
     {
-      "title": "IT",
+      "title": "Tokyo Drift",
       "rating": "5",
       "id": 7
     },
     {
-      "title": "Tokyo Drift",
-      "rating": "5",
+      "title": "Casablanca",
+      "rating": "1",
       "id": 8
     },
     {
-      "title": "fast and furious tokyo drift",
-      "rating": "5",
+      "title": "Coco",
+      "rating": "1",
       "id": 9
     }
   ]
