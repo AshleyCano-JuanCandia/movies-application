@@ -1,5 +1,5 @@
-// $(document).ready(function () {
-//     "use strict";
+
+    // "use strict";
     /**
      * es6 modules and imports
      */
@@ -43,13 +43,20 @@
 
                    console.log(`id#${id} - ${title} - rating: ${rating}`);
                    console.log("data= ", movieData);
-                   movieHTML += `<div class="displayBox" style="background-image: url('${movieData.poster.trim()}')">`;
+                   movieHTML += `<div class="displayBox" style="background-image: url('${movieData.poster}')">`;
                    movieHTML += `${title} <div class="smallerFont">${movieData.director}, ${movieData.year} <div class="smallerFont">rating: ${rating}</div></div></div>`;
                    $("#movieData").html(movieHTML);
                    currentMoviesHTML += `<option value=${id} class="value">${title}</option>`;
                    $("#movies").html(currentMoviesHTML);
                    $("#movieToEdit").val($("#movies option:selected").text());
-                   console.groupEnd(title);
+
+                   $(".displayBox").click(
+                       function(){
+                           $(this).css({"border": "5px solid red", "border-radius": "5px"});
+                           $(this).addClass('active');
+                       });
+                       // function(){}
+
 
                }).fail(function () {
                    console.log("error on request");
@@ -120,10 +127,8 @@
                 'Content-Type': 'application/json',
             }
         };
-        fetch('/api/movies/9', options)
+        fetch('/api/movies/2', options)
             .then(() => console.log('delete was created successfully!'))
             .catch(() => console.log('Error on post'));
         updateMovies();
     });
-
-// })
