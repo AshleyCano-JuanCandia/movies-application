@@ -8,3 +8,22 @@ html, body {
     /*transform: translateY(-100%);*/
     text-align: center;
 }
+.displayBox {
+    height: 444px;
+    width: 300px;
+    background-color: indianred;
+    margin: 10px;
+    float: left;
+    color: white;
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    padding-top: 10px;
+    text-shadow: 1px 1px black;
+}
+.displayBox:nth-child(4), .displayBox:nth-child(7){
+    clear: left;
+}
+.smallerFont {
+    font-family: 'Abel', sans-serif;
+    font-size: 17px;
+}

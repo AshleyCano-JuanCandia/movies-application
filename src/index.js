@@ -14,19 +14,49 @@
 
     const {getMovies} = require('./api.js');
 
+    let movieData = {};
+
+    let movieDataObject = {};
+
+    function getMovieData(movie) {
+
+    }
+
+
    function updateMovies() {
        getMovies().then((movies) => {
            console.log('Here are all the movies:');
            let movieHTML = "";
            let currentMoviesHTML = "";
            movies.forEach(({title, rating, id}) => {
-               console.log(`id#${id} - ${title} - rating: ${rating}`);
-               movieHTML += `<div>id#${id} - ${title} - rating: ${rating}`;
-               movieHTML += `<input id="checkBox" type="checkbox"></div>`;
-               $("#movieData").html(movieHTML);
-               currentMoviesHTML += `<option value=${id} class="value">${title}</option>`;
-               $("#movies").html(currentMoviesHTML);
-               $("#movieToEdit").val($("#movies option:selected").text());
+               $.get(`http://www.omdbapi.com/?t=${title}&apikey=f9b07338&`, {
+
+               }).done(function (data) {
+                   console.group(title);
+                   movieData = {
+                       poster: data.Poster,
+                       director: data.Director,
+                       year: data.Year
+                   };
+
+                   console.log(movieData);
+
+                   console.log(`id#${id} - ${title} - rating: ${rating}`);
+                   console.log("data= ", movieData);
+                   movieHTML += `<div class="displayBox" style="background-image: url('${movieData.poster.trim()}')">`;
+                   movieHTML += `${title} <div class="smallerFont">${movieData.director}, ${movieData.year} <div class="smallerFont">rating: ${rating}</div></div></div>`;
+                   $("#movieData").html(movieHTML);
+                   currentMoviesHTML += `<option value=${id} class="value">${title}</option>`;
+                   $("#movies").html(currentMoviesHTML);
+                   $("#movieToEdit").val($("#movies option:selected").text());
+                   console.groupEnd(title);
+
+               }).fail(function () {
+                   console.log("error on request");
+               });
+
+
+
            });
        }).catch((error) => {
            alert('Oh no! Something went wrong.\nCheck the console for details.');
@@ -36,7 +66,7 @@
 
    updateMovies();
 
-    $('#submitMovie').click(function(e) {
+    $('#addMovie').click(function(e) {
         e.preventDefault();
         const newMovie = {
            title: $('#title').val(),
