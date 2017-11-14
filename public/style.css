@@ -1,7 +1,6 @@
 html, body {
     height: 100%;
 }
-
 .container {
     position: relative;
     text-align: center;
@@ -18,7 +17,6 @@ html, body {
     font-size: 30px;
     padding-top: 75px;
     text-shadow: 1px 1px black;
-
 }
 .displayBox:nth-child(4), .displayBox:nth-child(7){
     clear: left;
