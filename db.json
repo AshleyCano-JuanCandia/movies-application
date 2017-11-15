@@ -1,34 +1,9 @@
 {
   "movies": [
     {
-      "title": "Fight Club",
-      "rating": "5",
+      "title": "Finding Nemo",
+      "rating": "1",
       "id": 3
-    },
-    {
-      "title": "Moana",
-      "rating": "5",
-      "id": 4
-    },
-    {
-      "title": "IT",
-      "rating": "5",
-      "id": 6
-    },
-    {
-      "title": "Tokyo Drift",
-      "rating": "5",
-      "id": 7
-    },
-    {
-      "title": "Casablanca",
-      "rating": "1",
-      "id": 8
-    },
-    {
-      "title": "Coco",
-      "rating": "1",
-      "id": 9
     }
   ]
 }
