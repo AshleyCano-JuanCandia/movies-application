@@ -7,16 +7,16 @@ html, body {
     background-color: #eaeaea;
 }
 .displayBox {
-    height: 433px;
+    height: 350px;
     width: 300px;
-    background-color: indianred;
+    /*background-color: indianred;*/
     margin: 10px;
     float: left;
-    color: white;
+    /*color: white;*/
     font-family: 'Anton', sans-serif;
     font-size: 30px;
     padding-top: 75px;
-    text-shadow: 1px 1px black;
+    /*text-shadow: 1px 1px black;*/
 }
 .displayBox:nth-child(4), .displayBox:nth-child(7){
     clear: left;
@@ -24,4 +24,9 @@ html, body {
 .smallerFont {
     font-family: 'Abel', sans-serif;
     font-size: 17px;
+}
+
+.textArea {
+    background-color: lightgrey;
+    opacity: .5;
 }
