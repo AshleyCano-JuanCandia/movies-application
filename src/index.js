@@ -28,7 +28,7 @@ function updateMovies() {
                 // console.log(movieData);
                 console.log(`id#${id} - ${title} - rating: ${rating}`);
                 // console.log("data= ", movieData);
-                let backgroundImageStyling = `"background-image: url('${movieData.poster}');background-repeat:no-repeat;background-image: cover"`;
+                let backgroundImageStyling = `"background-image: url('${movieData.poster}');background-repeat:no-repeat;background-image: cover; border-radius: 10px"`;
 
                 movieHTML += `<div class="displayBox" style=${backgroundImageStyling} data-dbid="${id}">`;
                 movieHTML += `<div class="textArea">${title} <div class="smallerFont">`;
@@ -42,12 +42,8 @@ function updateMovies() {
                 $(".displayBox").click(
                     function () {
                         $(this).toggleClass('active');
+                        // $("#deleteMovieBtn").toggleClass("invisible");
                     });
-
-                // $("div.id_100 select").val("val2");
-                // $("select.editedMovie").val("3").change
-
-                // $("$('#movieToEdit')")
 
             }).fail(function () {
                 console.log("error on request");

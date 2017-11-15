@@ -2,24 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>My Application</title>
-    <!--<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">-->
+    <title>Movie Lister App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton|Abel">
 </head>
 <body>
 
 <div class="container">
+    <h1>MOVIE LISTER</h1>
     <div id="movieData">
-        <h1>....loading</h1>
+        <h1>Just a sec! :)</h1>
     </div>
 
-    <hr>
-
-    <div>Add a Movie:</div>
+    <div class="fixed-sidebar">
+        <div class="nav-items">
+    <div class="abel">Add a Movie:</div>
     <form>
         <label for="title">Title: </label>
         <input id='title' type="text" name="title">
+
+        <br>
 
         <label for="rating">Rating:</label>
         <select name="rating" id="rating">
@@ -30,41 +33,45 @@
             <option value="5" class="value">5</option>
         </select>
 
+        <br>
 
 <button id="addMovie" type="submit">Submit</button>
-<button id="deleteMovieBtn" type="submit">Delete Movie(s)</button>
 
 </form>
 
 <hr>
 
-<p>Edit a Movie:</p>
-<form>
-    <select name="movies" id="movies" class="editedMovie">
-    </select>
+<button id="deleteMovieBtn" type="submit">Delete Movie(s)</button>
 
-    <br>
+<!--<p class="abel">Edit a Movie:</p>-->
+<!--<form>-->
+    <!--<select name="movies" id="movies" class="editedMovie">-->
+    <!--</select>-->
 
-    <label for="title">New Title:</label>
-    <input id='movieToEdit' type="text" name="movieToEdit">
+    <!--<br>-->
 
-    <label for="newRating">New Rating:</label>
-    <select name="newRating" id="newRating">
-        <option value="1" class="value">1</option>
-        <option value="2" class="value">2</option>
-        <option value="3" class="value">3</option>
-        <option value="4" class="value">4</option>
-        <option value="5" class="value">5</option>
-    </select>
+    <!--<label for="title">New Title:</label>-->
+    <!--<input id='movieToEdit' type="text" name="movieToEdit">-->
 
-    <br>
+    <!--<label for="newRating">New Rating:</label>-->
+    <!--<select name="newRating" id="newRating">-->
+        <!--<option value="1" class="value">1</option>-->
+        <!--<option value="2" class="value">2</option>-->
+        <!--<option value="3" class="value">3</option>-->
+        <!--<option value="4" class="value">4</option>-->
+        <!--<option value="5" class="value">5</option>-->
+    <!--</select>-->
 
-    <button id="editMovie" type="submit">Submit</button>
+    <!--<br>-->
+
+    <!--<button id="editMovie" type="submit">Submit</button>-->
 
 </form>
-
+        </div>
+    </div>
 </div>
 
 <script src="./main.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
