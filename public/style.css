@@ -2,9 +2,13 @@ html, body {
     height: 100%;
 }
 .container {
-    position: relative;
+    /*position: relative;*/
     text-align: center;
     background-color: #eaeaea;
+}
+
+#movieData{
+    width: 85%;
 }
 .displayBox {
     height: 350px;
@@ -18,7 +22,7 @@ html, body {
     padding-top: 75px;
     /*text-shadow: 1px 1px black;*/
 }
-.displayBox:nth-child(4), .displayBox:nth-child(7){
+.displayBox:nth-child(4), .displayBox:nth-child(7), .displayBox:nth-child(10), .displayBox:nth-child(13){
     clear: left;
 }
 .smallerFont {
@@ -33,4 +37,52 @@ html, body {
 .active {
     border: 5px solid red;
     border-radius: 5px;
+}
+
+.col-one-eighth,
+.col-one-fourth,
+.col-one-half,
+.col-one-third,
+.col-two-thirds,
+.col-one-sixth {
+    width: 100%;
+    box-sizing: border-box;
+
+    /*float: left;*/
+}
+
+/*you could add this styling to an embedded style in your html as this is page specific styling*/
+/*.box {*/
+/*border: 1px solid black;*/
+/*padding: 20px;*/
+/*box-sizing: border-box; !*use this property so the size of the border doesn't affect your overall size of your element'*!*/
+/*}*/
+
+
+@media screen and (min-width: 768px) {
+    .col-one-half {
+        width: 50%;
+    }
+
+    .col-one-third {
+        width: 33.33%;
+    }
+
+    .col-one-fourth {
+        width: 25%;
+    }
+
+    .col-one-sixth {
+        width: 16.6666%;
+    }
+
+    .col-one-eighth {
+        width: 12.5%;
+    }
+
+    .col-two-thirds {
+        width: 66.6666%;
+    }
+
+
 }
