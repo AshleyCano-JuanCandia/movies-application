@@ -4,6 +4,26 @@
       "title": "Finding Nemo",
       "rating": "1",
       "id": 3
+    },
+    {
+      "title": "fight club",
+      "rating": "1",
+      "id": 5
+    },
+    {
+      "title": "saving private ryan",
+      "rating": "1",
+      "id": 6
+    },
+    {
+      "title": "300",
+      "rating": "1",
+      "id": 7
+    },
+    {
+      "title": "Cinderella",
+      "rating": "1",
+      "id": 8
     }
   ]
 }

@@ -38,10 +38,16 @@ function updateMovies() {
                 currentMoviesHTML += `<option value=${id} class="value">${title}</option>`;
                 $("#movies").html(currentMoviesHTML);
                 $("#movieToEdit").val($("#movies option:selected").text());
+
                 $(".displayBox").click(
                     function () {
                         $(this).toggleClass('active');
                     });
+
+                // $("div.id_100 select").val("val2");
+                // $("select.editedMovie").val("3").change
+
+                // $("$('#movieToEdit')")
 
             }).fail(function () {
                 console.log("error on request");
@@ -49,39 +55,39 @@ function updateMovies() {
         });
 
 
-
-
     }).catch((error) => {
         alert('Oh no! Something went wrong.\nCheck the console for details.');
         console.log(error);
     });
 }
-        //********** delete movie
 
-        $('#deleteMovieBtn').click(function (e) {
-            e.preventDefault();
-                console.log("movie to delete", $(".active").data("dbid"));
+//********** delete movie
 
-            $(".active").each((selectedMovie) => {
-                let thisMovie = $(".active")[selectedMovie];
-                let movieId = $(thisMovie).data("dbid");
+$('#deleteMovieBtn').click(function (e) {
+    e.preventDefault();
+    console.log("movie to delete", $(".active").data("dbid"));
 
-                const options = {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                };
-                fetch(`/api/movies/${movieId}`, options)
-                    .then(() => {console.log('delete a movie was created successfully!');
-                        updateMovies();
-                })
-                    .catch(() => console.log('Error on post'));
-            });
+    $(".active").each((selectedMovie) => {
+        let thisMovie = $(".active")[selectedMovie];
+        let movieId = $(thisMovie).data("dbid");
+
+        const options = {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        };
+        fetch(`/api/movies/${movieId}`, options)
+            .then(() => {
+                console.log('delete a movie was created successfully!');
+                updateMovies();
+            })
+            .catch(() => console.log('Error on post'));
+    });
 
 
-        });
-        //************* delete movie
+});
+//************* delete movie
 
 updateMovies();
 
@@ -107,26 +113,31 @@ $('#addMovie').click(function (e) {
 
 });
 
-$('#movies').change(function () {
-    $("#movieToEdit").val($("#movies option:selected").text());
-});
-
-$('#editMovie').click(function (e) {
-    e.preventDefault();
-    const newMovie = {
-        title: $('#title').val(),
-        rating: $('#rating').val()
-    };
-    const options = {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newMovie),
-    };
-    fetch('/api/movies', options)
-        .then(() => console.log('edit a movie post was created successfully!'))
-        .catch(() => console.log('Error on post'));
-    updateMovies();
-});
+// $('#movies').change(function () {
+//     $("#movieToEdit").val($("#movies option:selected").text());
+// });
+//
+// $('#editMovie').click(function (e) {
+//     e.preventDefault();
+//
+//     console.log($('#movieToEdit').val());
+//     console.log($('#newRating').val());
+//
+//
+//     const newMovie = {
+//         title: $('#movieToEdit').val(),
+//         rating: $('#newRating').val()
+//     };
+//     const options = {
+//         method: 'PUT',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(newMovie),
+//     };
+//     fetch('/api/movies/', options)
+//         .then(() => console.log('edit a movie post was created successfully!'))
+//         .catch(() => console.log('Error on post'));
+//     updateMovies();
+// });
 
