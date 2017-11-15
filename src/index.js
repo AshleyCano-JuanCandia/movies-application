@@ -42,6 +42,7 @@ function updateMovies() {
                 $(".displayBox").click(
                     function () {
                         $(this).toggleClass('active');
+                        // $("#deleteMovieBtn").toggleClass("invisible");
                     });
 
             }).fail(function () {

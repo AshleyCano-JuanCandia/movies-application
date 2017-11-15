@@ -11,11 +11,6 @@
       "id": 10
     },
     {
-      "title": "Cinderella",
-      "rating": "3",
-      "id": 11
-    },
-    {
       "title": "Spirited Away",
       "rating": "5",
       "id": 12
@@ -26,11 +21,6 @@
       "id": 13
     },
     {
-      "title": "Inglourious Basterds",
-      "rating": "3",
-      "id": 14
-    },
-    {
       "title": "Jurassic Park",
       "rating": "5",
       "id": 15
@@ -39,6 +29,16 @@
       "title": "Rocky",
       "rating": "5",
       "id": 16
+    },
+    {
+      "title": "Beauty and the Beast",
+      "rating": "4",
+      "id": 19
+    },
+    {
+      "title": "Cowboy Bebop",
+      "rating": "4",
+      "id": 20
     }
   ]
 }
