@@ -28,5 +28,9 @@ html, body {
 
 .textArea {
     background-color: lightgrey;
-    opacity: .5;
+    opacity: .8;
+}
+.active {
+    border: 5px solid red;
+    border-radius: 5px;
 }

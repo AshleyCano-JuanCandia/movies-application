@@ -19,18 +19,18 @@ function updateMovies() {
         let currentMoviesHTML = "";
         movies.forEach(({title, rating, id}) => {
             $.get(`http://www.omdbapi.com/?t=${title}&apikey=f9b07338&`, {}).done(function (data) {
-                console.group(title);
+                // console.group(title);
                 movieData = {
                     poster: data.Poster,
                     director: data.Director,
                     year: data.Year
                 };
-                console.log(movieData);
+                // console.log(movieData);
                 console.log(`id#${id} - ${title} - rating: ${rating}`);
-                console.log("data= ", movieData);
-                let backgroundImageStyling = `"background-image: url('${movieData.poster}');background-repeat:no-repeat;background-image: contain"`;
+                // console.log("data= ", movieData);
+                let backgroundImageStyling = `"background-image: url('${movieData.poster}');background-repeat:no-repeat;background-image: cover"`;
 
-                movieHTML += `<div class="displayBox" style=${backgroundImageStyling}>`;
+                movieHTML += `<div class="displayBox" style=${backgroundImageStyling} data-dbid="${id}">`;
                 movieHTML += `<div class="textArea">${title} <div class="smallerFont">`;
                 movieHTML += `${movieData.director}, ${movieData.year} <div class="smallerFont">rating: ${rating}</div>`;
                 movieHTML += `</div></div></div>`;
@@ -40,39 +40,48 @@ function updateMovies() {
                 $("#movieToEdit").val($("#movies option:selected").text());
                 $(".displayBox").click(
                     function () {
-                        $(this).css({"border": "5px solid red", "border-radius": "5px"});
-                        $(this).addClass('active');
+                        $(this).toggleClass('active');
                     });
 
-                //********** delete movie
-
-                $('#deleteMovieBtn').click(function (e) {
-                    e.preventDefault();
-
-                    // $(".active").each((movie) => {
-                    //     console.log("movie to delete", movie.id);
-                    //     const options = {
-                    //         method: 'DELETE',
-                    //         headers: {
-                    //             'Content-Type': 'application/json',
-                    //         }
-                    //     };
-                    //     fetch(`/api/movies/2`, options)
-                    //         .then(() => console.log('delete was created successfully!'))
-                    //         .catch(() => console.log('Error on post'));
-                    // })
-                    // updateMovies();
-                });
-                //************* delete movie
             }).fail(function () {
                 console.log("error on request");
             });
         });
+
+
+
+
     }).catch((error) => {
         alert('Oh no! Something went wrong.\nCheck the console for details.');
         console.log(error);
     });
 }
+        //********** delete movie
+
+        $('#deleteMovieBtn').click(function (e) {
+            e.preventDefault();
+                console.log("movie to delete", $(".active").data("dbid"));
+
+            $(".active").each((selectedMovie) => {
+                let thisMovie = $(".active")[selectedMovie];
+                let movieId = $(thisMovie).data("dbid");
+
+                const options = {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                };
+                fetch(`/api/movies/${movieId}`, options)
+                    .then(() => {console.log('delete a movie was created successfully!');
+                        updateMovies();
+                })
+                    .catch(() => console.log('Error on post'));
+            });
+
+
+        });
+        //************* delete movie
 
 updateMovies();
 
@@ -90,9 +99,12 @@ $('#addMovie').click(function (e) {
         body: JSON.stringify(newMovie),
     };
     fetch('/api/movies', options)
-        .then(() => console.log('post was created successfully!'))
+        .then(() => {
+            console.log('add a movie post was created successfully!');
+            updateMovies();
+        })
         .catch(() => console.log('Error on post'));
-    updateMovies();
+
 });
 
 $('#movies').change(function () {
@@ -113,7 +125,7 @@ $('#editMovie').click(function (e) {
         body: JSON.stringify(newMovie),
     };
     fetch('/api/movies', options)
-        .then(() => console.log('post was created successfully!'))
+        .then(() => console.log('edit a movie post was created successfully!'))
         .catch(() => console.log('Error on post'));
     updateMovies();
 });
